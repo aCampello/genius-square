@@ -5,6 +5,7 @@ import time
 import tqdm
 from bokeh.plotting import output_file, show
 from bokeh.layouts import column
+from joblib import Parallel, delayed
 
 from base_classes import Board, Piece, plot_board
 
@@ -101,24 +102,34 @@ def random_board_and_solutions():
 
 all_dice_combinations = list(itertools.product(*Board.dice))
 
-print(len(all_dice_combinations))
-
 if __name__ == "__main__":
     #random_board_and_solutions()
 
-    dice_to_number_of_solutions = {
-    }
     start = time.time()
     # Clears board and tries to find all solutions
 
-    for dice in tqdm.tqdm(all_dice_combinations[:500]):
+    def one_iteration_solve(dice):
         board = Board(initial_dice=dice)
 
         sols = solve(board, all_solutions=True)
-        dice_to_number_of_solutions[",".join(board.initial_dice)] = len(set(sols))
+
+        return ",".join(board.initial_dice), len(set(sols))
+
+
+    # for dice in all_dice_combinations[:5]:
+    #     one_iteration_solve(dice)
+
+    results = \
+        Parallel(n_jobs=4)(
+            delayed(one_iteration_solve)(dice) for dice in all_dice_combinations[:10]
+        )
 
     print(f"{time.time()-start:.5f}")
 
+    dice_to_number_of_solutions = {
+        key: value
+        for key, value in results
+    }
     with open('solutions.json', 'w') as f:
         json.dump(dice_to_number_of_solutions, f, indent=4, sort_keys=True)
 
