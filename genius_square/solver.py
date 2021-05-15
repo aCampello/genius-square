@@ -72,8 +72,8 @@ def clear_board(board, sol):
     return board
 
 
-def random_board_and_solutions():
-    board = Board()
+def random_board_and_solutions(initial_dice=None):
+    board = Board(initial_dice=initial_dice)
     plot_board(board)
 
     start = time.time()
@@ -92,12 +92,14 @@ def random_board_and_solutions():
     print(f"Time to find all solutions: {time.time()-start:.5f}")
 
     p_sols = []
-    for sol in sols[:5]:
+    for sol in sols[:10]:
         board = place_solution(board, sol)
         p_sols.append(plot_board(board))
         board = clear_board(board, sol)
 
     show(column(*p_sols))
+
+    return sols
 
 
 all_dice_combinations = list(itertools.product(*Board.dice))
@@ -120,8 +122,8 @@ if __name__ == "__main__":
     #     one_iteration_solve(dice)
 
     results = \
-        Parallel(n_jobs=4)(
-            delayed(one_iteration_solve)(dice) for dice in all_dice_combinations[:10]
+        Parallel(n_jobs=8)(
+            delayed(one_iteration_solve)(dice) for dice in all_dice_combinations[:1000]
         )
 
     print(f"{time.time()-start:.5f}")

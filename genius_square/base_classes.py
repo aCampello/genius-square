@@ -1,6 +1,9 @@
 import numpy as np
 import random
+import time
+
 from bokeh.plotting import figure, output_file, show
+from bokeh.layouts import column
 
 
 class Piece:
@@ -30,7 +33,7 @@ class Piece:
     number_to_piece = {number: piece for piece, number in piece_to_number.items()}
 
     piece_to_rot_1 = {
-        'grey': [(0, 0), (1, 0), (2, 0), (3, 0)],
+        'grey': [(0, 0), (0, 1), (0, 2), (0, 3)],
         'deepskyblue': [(0, 1), (1, 1), (2, 1), (2, 0)],
         'darkorange': [(0, 0), (0, 1), (0, 2)],
         'yellow': [(0, 1), (1, 0), (1, 1), (1, 2)],
@@ -226,14 +229,14 @@ def plot_board(board: Board):
     return p
 
 
+def test_piece(piece):
+    board = Board()
+    plot_board(board)
+    boards =[]
+    for rotation in range(8):
+        if Piece(piece).rot[rotation]:
+            board.place_piece(Piece(piece), (0, 0), rotation=rotation)
+            boards.append(plot_board(board))
+            board.remove_piece(Piece(piece), (0, 0), rotation=rotation)
 
-import time
-#
-#board = Board()
-#plot_board(board)
-# for rotation in range(8):
-#     board.place_piece(Piece('deepskyblue'), (0, 0), rotation=rotation)
-#     plot_board(board)
-#     print(board)
-#     board.remove_piece(Piece('deepskyblue'), (0, 0), rotation=rotation)
-#     time.sleep(2)
+    show(column(*boards))
