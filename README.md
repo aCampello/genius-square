@@ -13,13 +13,18 @@ Since we were actually quite quick at cracking each of the configurations, we wo
 The game is pretty simple. Each player owns a 6x6 board and 9 pieces with different shapes. At the beginning of each round, 7 dice are rolled and, based on the result, 7 squares of the board are "blocked" by circular pieces. The winner of the round is the player who is able to place the 9 pieces correctly into the board. Below are some pictures:
 
 Original configuration:
-![empty-board.png](empty-board.png)
+
+
+<img src="https://github.com/aCampello/genius-square/blob/main/empty-board.png" width="500" />
+
 
 Picture of the pieces:
-![pieces.png](pieces.png)
+
+<img src="https://github.com/aCampello/genius-square/blob/main/pieces.png" width="500" />
 
 Solved board:
-![empty-board.png](solved-board.png)
+
+<img src="https://github.com/aCampello/genius-square/blob/main/solved-board.png" width="500" />
 
 The dice are a bit "funny", and some of the faces have repeated numbers, which leads to the magical 62208 numbers.
 In particular, those are the "faces" of each of the 7 dice:
@@ -63,8 +68,8 @@ We thus decided to break down the problem of "solving" the game into two steps:
 ### 1. Finding possible solutions
 
 There is a huge discrepancy between finding <i>one</i> solution (easy problem) and finding all solutions (combinatorially hard).
-After modelling the problem ina classic Object-Oriented way (see `genius_square/base_classes.py` to appreciate the objects `Pieces` and `Board`),
-we decide for a recursive approach to solve the game. In particular, the general approach is:
+After modelling the problem in a classic Object-Oriented way (see `genius_square/base_classes.py` to appreciate the objects `Pieces` and `Board`),
+we decided for a recursive approach to solve the game. In particular, the general approach is:
 
 ```bash
 For all possible positions for the j-th piece:
