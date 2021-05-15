@@ -1,6 +1,6 @@
 # Genius Square
 
-Jo and I were playing genius square (see an explanation about the game below) and were intrigued by the claim that, among all 62208 possible configurations of the board, all of them have `at least one solution`. 
+[Jo](https://github.com/jd12006) and I were playing genius square (see an explanation about the game below) and were intrigued by the claim that, among all 62208 possible configurations of the board, all of them have `at least one solution`. 
 Since we were actually quite quick at cracking each of the configurations, we asked about the difficulty of the game, and decided to take a data-driven approach to answer that.
 In particular we wanted to know:
 
