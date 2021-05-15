@@ -190,8 +190,6 @@ def plot_board(board: Board):
                 cols_barriers.append(board.index_to_letter[j+1])
                 colors_barriers.append('bisque')
 
-
-
     data = {
         "x": rows,
         "y": cols,

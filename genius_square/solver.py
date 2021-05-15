@@ -105,7 +105,6 @@ def random_board_and_solutions(initial_dice=None):
 all_dice_combinations = list(itertools.product(*Board.dice))
 
 if __name__ == "__main__":
-    #random_board_and_solutions()
 
     start = time.time()
     # Clears board and tries to find all solutions
