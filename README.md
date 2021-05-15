@@ -42,7 +42,7 @@ In particular, those are the "faces" of each of the 7 dice:
 ```
 
 The pieces are uniquely identified by their colour and have their own class in `base_classes.py`.
-Each of them can be flipped or rotated (but some of the isometric transformetions will yield the same "shape"). We decided to hard-code those as opposed to doing some maths to figure out automatically, as it was Saturday night, too late for maths.
+Each of them can be flipped or rotated (but some of the isometric transformetions will yield the same "shape"). We decided to hard-code those as opposed to doing some maths to figure out automatically, as it was Friday night, too late for maths.
 ```python
 grey = Piece('grey')
 green = Piece('green')
@@ -96,7 +96,7 @@ Sometimes it took as much as 10 seconds for one configuration alone. We estimate
 ### 2. Iterating over all configuration
 
 Probably some smart mathematics to do with the symmetries of the board could have cut our work in half or more. 
-But, again, Saturday night and the fact that we were a bit tired of this experiment led us to use brute force. But we needed used it smartly because we didn't want to wait a week for an answer.
+But, again, Friday night and the fact that we were a bit tired of this experiment led us to use brute force. But we needed used it smartly because we didn't want to wait a week for an answer.
 
 This search could be easily parallelized with pythons `joblib` library. See the beautiful line 123 of `solver.py` (nothing else is beautiful in that file).
 
