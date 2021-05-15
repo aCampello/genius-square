@@ -91,7 +91,7 @@ def (board: Board, pieces=[grey, green, blue, orange, yellow, red, brown, purple
 ```
 
 Finding one solution for each configuration is really just a question of milliseconds. Finding <i>all</i> solutions was another story.
-Sometimes it took as much as 10 seconds for one configuration alone. We estimated it would take us a week to have our sought-after answer to the original question how hard the game was. 
+Sometimes it took as much as 10 seconds for one configuration alone. We estimated it would take us a week to have our sought-after answer to the original question on how hard the game was. 
 
 ### 2. Iterating over all configuration
 
