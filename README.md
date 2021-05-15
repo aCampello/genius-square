@@ -130,12 +130,12 @@ The median number of solutions is 1340, with inter-quartile range between 715 an
 
 The easiest configuration has 22317. That's a ridiculous number. Below is that configuration (I'm sure you can find a solution given the pieces):
 
-![easy.png](easy.png)
+ <img src="https://github.com/aCampello/genius-square/blob/main/easy.png" width="500" />
 
 Below is the actual distribution:
 
-![histogram.png](histogram.png)
+<img src="https://github.com/aCampello/genius-square/blob/main/histogram.png" width="500" />
 
 ## Why did we do this?
 
-I have no idea. It seemed like a good idea to crack the game computationally instead of actually playing it. Maybe we'll suggest improvements or different modes to the game in the future.   
+I have no idea. It seemed like a good idea to crack the game computationally instead of actually playing it. Maybe we'll suggest improvements or different modes to the game in the future.
