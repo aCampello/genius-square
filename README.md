@@ -1,17 +1,16 @@
 # Genius Square
 
-[Jo](https://github.com/jd12006) and I were playing genius square (see an explanation about the game below) and were intrigued by the claim that, among all 62208 possible configurations of the board, all of them have `at least one solution`. 
-Since we were actually quite quick at cracking each of the configurations, we asked about the difficulty of the game, and decided to take a data-driven approach to answer that.
-In particular we wanted to know:
+[Jo](https://github.com/jd12006) and I were playing genius square (see an explanation about the game below) and were intrigued by the claim that, among all 62208 possible configurations of the board, all of them have <b>at least one solution</b>.
+Since we were actually quite quick at cracking each of the configurations, we wondered about the general difficulty of the game. We decided to take a data-driven approach to answer that. In particular we wanted to know:
 
 - Q.1. Is there any configuration with <i>exactly</i> one solution? 
 - Q.2. If not, what is the hardest configuation (i.e. with the minimum number of solutions)?
 - Q.3. How hard is a "typical" game (i.e. what is the median number of solutions)?
 - Q.4. What is the easiest configuration?
 
-## Explanation
+## Explanation
 
-The game is pretty simple. Each player owns a 6x6 board and 9 pieces with different shape. At the beginning of each round, 7 dice are rolled and, based on the result, 7 squares of the board are "blocked" by circular pieces. The winner of the round is the player who is able to place the 9 pieces correctly into the board. Below are some pictures:
+The game is pretty simple. Each player owns a 6x6 board and 9 pieces with different shapes. At the beginning of each round, 7 dice are rolled and, based on the result, 7 squares of the board are "blocked" by circular pieces. The winner of the round is the player who is able to place the 9 pieces correctly into the board. Below are some pictures:
 
 Original configuration:
 ![empty-board.png](empty-board.png)
