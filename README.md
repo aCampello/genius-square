@@ -124,7 +124,7 @@ The hardest configuration is the one shown above in the [explanation](#explanati
 
 - Q.3. How hard is a "typical" game (i.e. what is the median number of solutions)?
 
-The median number of solutions is 1340, with inter-quartile range between 715 and 2414. Base on that, I'd say the game is actually pretty easy. (0.95-quantile around 5600).
+The median number of solutions is 1340, with inter-quartile range between 715 and 2414. Based on that, I'd say the game is actually pretty easy. (0.95-quantile around 5600).
 
 - Q.4. What is the easiest configuration?
 
@@ -132,7 +132,7 @@ The easiest configuration has 22317. That's a ridiculous number. Below is that c
 
  <img src="https://github.com/aCampello/genius-square/blob/main/easy.png" width="500" />
 
-Below is the actual distribution:
+Below is the actual distribution of the number of solutions:
 
 <img src="https://github.com/aCampello/genius-square/blob/main/histogram.png" width="500" />
 
